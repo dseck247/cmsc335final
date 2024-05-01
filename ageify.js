@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //get the path to the .env
-require("dotenv").config({ path: path.resolve(__dirname, "./.env") }); // which is in the .env
+require("dotenv").config({ path: path.resolve(__dirname, "./etc/secrets/.env") }); // which is in the .env
 
 //MongoDB variables
 const uri = process.env.MONGO_CONNECTION_STRING;
