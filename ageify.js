@@ -84,6 +84,7 @@ app.post("/age", async (request, response) => {
         table += `<tr><td>${element.name}</td><td>${element.age}</td></tr>`;
     });
     table+= `</table>`;
+      console.log(result);
   } catch(e) {
     console.error(e);
   } finally {
