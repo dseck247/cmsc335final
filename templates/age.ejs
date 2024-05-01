@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agify</title>
+    <style>
+      /* NOTE: While validating, make sure you use CSS */
+      /* level 3 profile by accessing "More Options" */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+       /* background-image: url("/../background.jpg");*/
+      }
+
+      input {
+        margin: 0.75em;
+
+        /* Makes our input elements with round borders (curre
+                 /*border-radius: 1em; */
+
+        /* Some padding to help round borders */
+        padding: 0.25em;
+      }
+
+      input[type="button"] {
+        box-shadow: 1em 1em 1em silver;
+      }
+
+      h1 {
+        text-shadow: silver 0.25em 0.25em 0.25em;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Displaying Age Guesses</h1>
+    <hr>
+    <%-table_result %>
+    <br>
+    <form action="http://localhost:<%= portNumber %>/processRemove" method="post">
+      <input type="submit" value="Remove all Names">
+    </form>
+    <hr>
+    <footer>
+      <a href="http://localhost:<%= portNumber %>/">HOME</a>
+    </footer>
+  </body>
+</html>

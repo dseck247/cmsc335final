@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- <!change file type to .eds after finishing> -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Agify </title>
+        <style>
+            body {
+                font-family: 'Times New Roman', Times, serif;
+                height: 100%;
+            }
+
+            input {
+                padding: 0.25em;
+            }
+
+            input[type="button"] {
+                box-shadow: 1em 1em 1em silver;
+            }
+
+            h1 {
+                text-shadow: silver 0.25em 0.25em 0.25em;
+            }
+        </style>
+    </head> 
+    <body background="./templates/background.jpg">
+        <h1>Welcome to Agify!</h1>
+        <hr>
+        The Agify API is a fun API that tries to predict your age from your name.<br>
+        Enter your name to receive a guess !<br><br>
+        <form action="http://localhost:<%-portNumber %>/age" method="post">
+            <input type = "text" id= "input"  name = "Name" value="Nelson" required>
+            <br>
+            <br>
+            <button type = "submit">Submit Name</button>
+            <button type = "reset">Reset</button>
+        </form>
+    </body>
+</html>
