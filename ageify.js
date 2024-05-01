@@ -73,9 +73,12 @@ app.post("/age", async (request, response) => {
     age : age
   };
   let table = `<table border="1"><tr><th>Name</th><th>Age</th></tr>`;
-  console.log("here");
+  
   try{
+      console.log("here");
+    
     await client.connect();
+      console.log("here");
     //insert
     const result =  await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).insertOne(variable);
     // retrieve
