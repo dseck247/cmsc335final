@@ -58,7 +58,6 @@ if (process.argv.length !== 3) {
 // Main Page (where user enters name)
 app.get("/", (request, response) => {
   response.render("frontEnd", {portNumber: portNumber});
-    console.log("here");
 });
 
 // Second Page (table with name and age guess)
@@ -74,11 +73,8 @@ app.post("/age", async (request, response) => {
   };
   let table = `<table border="1"><tr><th>Name</th><th>Age</th></tr>`;
   
-  try{
-      console.log("here");
-    
+  try{    
     await client.connect();
-      console.log("here");
     //insert
     const result =  await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).insertOne(variable);
     // retrieve
@@ -94,7 +90,7 @@ app.post("/age", async (request, response) => {
     await client.close();
   }
 
-  response.render("age.ejs", {table_result: table, portNumber: portNumber});
+  response.render("age", {table_result: table, portNumber: portNumber});
 });
 
 // Remove all Users From Database
