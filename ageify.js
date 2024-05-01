@@ -78,13 +78,13 @@ app.post("/age", async (request, response) => {
     //insert
     const result =  await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).insertOne(variable);
     // retrieve
+      console.log("result" + result);
     const cursor = await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).find({});
     const collection =  await cursor.toArray();
     collection.forEach((element) => {
         table += `<tr><td>${element.name}</td><td>${element.age}</td></tr>`;
     });
     table+= `</table>`;
-      console.log(result);
   } catch(e) {
     console.error(e);
   } finally {
