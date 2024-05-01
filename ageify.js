@@ -10,11 +10,11 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //get the path to the .env
-require("dotenv").config({ path: path.resolve(__dirname, "./etc/secrets/.env") }); // which is in the .env
+//require("dotenv").config({ path: path.resolve(__dirname, "./etc/secrets/.env") }); // which is in the .env
 
 //MongoDB variables
-const uri = process.env.MONGO_CONNECTION_STRING;
-const databaseAndCollection = {db: process.env.MONGO_DB_NAME, collection: process.env.MONGO_COLLECTION};
+const uri = `mongodb+srv://dseck335:dsmdb335@cluster0.lhkuicb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const databaseAndCollection = {db: "CMSC335_FINALDB", collection: "namesAndAges"};
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
