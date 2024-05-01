@@ -58,6 +58,7 @@ if (process.argv.length !== 3) {
 // Main Page (where user enters name)
 app.get("/", (request, response) => {
   response.render("frontEnd", {portNumber: portNumber});
+    console.log("here");
 });
 
 // Second Page (table with name and age guess)
@@ -72,7 +73,7 @@ app.post("/age", async (request, response) => {
     age : age
   };
   let table = `<table border="1"><tr><th>Name</th><th>Age</th></tr>`;
-  
+  console.log("here");
   try{
     await client.connect();
     //insert
